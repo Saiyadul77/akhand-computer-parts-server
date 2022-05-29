@@ -1,5 +1,7 @@
 # manufacturer-website-server-side-Saiyadul77
 manufacturer-website-server-side-Saiyadul77 created by GitHub Classroom
+
+## I have completed my assignment [Welcome to Akhand Computer Parts](https://akhand-computer-parts.web.app/) 
 * My webpage name is Akhand Computer Parts.
 * I have used react router.
 * Also I have used firebase.
