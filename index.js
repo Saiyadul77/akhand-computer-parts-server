@@ -130,7 +130,7 @@ async function run() {
         })
 
         // POST USER
-        app.post('/booking', async (req, res) => {
+        app.post('/service', async (req, res) => {
             const booking = req.body;
             const result = await bookingCollection.insertOne(booking);
             res.send(result)
