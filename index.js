@@ -143,6 +143,11 @@ async function run() {
             const result = await serviceCollection.insertOne(booking);
             res.send(result)
         })
+        app.post('/booking', async (req, res) => {
+            const booking = req.body;
+            const result = await bookingCollection.insertOne(booking);
+            res.send(result)
+        })
 
         // POST Review
         app.post('/review', async (req, res) => {
