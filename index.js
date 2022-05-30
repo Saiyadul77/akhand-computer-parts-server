@@ -43,6 +43,7 @@ async function run() {
         const serviceCollection = client.db("computerParts").collection("accessories");
         const bookingCollection = client.db("computerParts").collection("bookings");
         const userCollection = client.db('computerParts').collection('users');
+        const reviewCollection = client.db('computerParts').collection('reviews');
 
         app.post('/login', async (req, res) => {
             const user = req.body;
@@ -133,6 +134,12 @@ async function run() {
         app.post('/service', async (req, res) => {
             const booking = req.body;
             const result = await serviceCollection.insertOne(booking);
+            res.send(result)
+        })
+        // POST Review
+        app.post('/review', async (req, res) => {
+            const reviews = req.body;
+            const result = await reviewCollection.insertOne(reviews);
             res.send(result)
         })
 
