@@ -60,6 +60,13 @@ async function run() {
             const services = await cursor.toArray();
             res.send(services);
         })
+        // get review
+        app.get('/review', async (req, res) => {
+            const query = {};
+            const cursor = reviewCollection.find(query);
+            const reviews = await cursor.toArray();
+            res.send(reviews);
+        })
 
         app.get('/user', verifyJWT, async (req, res) => {
             const users = await userCollection.find().toArray();
@@ -136,6 +143,7 @@ async function run() {
             const result = await serviceCollection.insertOne(booking);
             res.send(result)
         })
+
         // POST Review
         app.post('/review', async (req, res) => {
             const reviews = req.body;
